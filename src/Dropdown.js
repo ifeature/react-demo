@@ -1,17 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Dropdown extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       isOpened: false
     };
   }
+
   toggleDropdown() {
     this.setState({
       isOpened: !this.state.isOpened
     });
   }
+
   render() {
     const dropdownText = this.state.isOpened ? <div>Dropdown text</div> : '';
 
@@ -22,6 +25,7 @@ class Dropdown extends Component {
       </div>
     );
   }
+
 }
 
 export default Dropdown;

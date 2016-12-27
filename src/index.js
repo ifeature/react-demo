@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, findDOMNode } from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
 
 import reducer from './reducers';
 
@@ -14,15 +15,15 @@ import Something from './Something';
 
 import './index.css';
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+const logger = createLogger();
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk, logger)));
 
-ReactDOM.render(
+render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
 );
-
 
 
 // ReactDOM.render(

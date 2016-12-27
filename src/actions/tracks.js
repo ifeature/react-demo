@@ -21,8 +21,25 @@ const mockApiData = [
   }
 ];
 
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    const isSuccess = Boolean(Math.round(Math.random() * 2 - 0.5));
+    setTimeout(() => {
+      if (isSuccess) {
+        resolve(mockApiData);
+      } else {
+        reject('No data found');
+      }
+    }, 2000);
+  });
+};
+
 export const getTracks = () => dispatch => {
-  setTimeout(() => {
-    dispatch({type: 'FETCH_TRACKS_SUCCESS', payload: mockApiData});
-  }, 2000);
+  fetchData()
+    .then(data => {
+      dispatch({type: 'FETCH_TRACKS_SUCCESS', payload: data});
+    })
+    .catch(e => {
+      dispatch({type: 'FETCH_TRACKS_ERROR', payload: e});
+    });
 };

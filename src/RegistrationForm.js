@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './RegistrationForm.css';
 
 class RegistrationForm extends Component {
@@ -8,8 +8,8 @@ class RegistrationForm extends Component {
       email: ''
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = ::this.handleSubmit;
+    this.handleChange = ::this.handleChange;
   }
   static checkValidity(field) {
     const isValid = field.checkValidity();

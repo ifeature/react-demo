@@ -15,5 +15,6 @@ export default function playLists(state = initialState, action) {
       break;
     }
   }
+
   return state;
 }

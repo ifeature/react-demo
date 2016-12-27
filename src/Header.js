@@ -1,6 +1,7 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class Header extends Component {
+
   static propTypes = {
     title: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['news', 'development']),

@@ -7,12 +7,12 @@ export default function tracks(state = initialState, action) {
       break;
     }
     case 'FETCH_TRACKS_SUCCESS': {
-      console.log(action);
       return action.payload;
     }
     default: {
       break;
     }
   }
+
   return state;
 }

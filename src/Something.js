@@ -25,7 +25,7 @@ class Something extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="my-css-class">
         <div>Something</div>
         Model value: <input type="text" defaultValue="This is a default value" value={this.state.value} onChange={this.handleChange} />
         <br/>

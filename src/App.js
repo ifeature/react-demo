@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { connect } from 'react-redux';
-import { getTracks } from './actions/tracks';
+import { css } from 'aphrodite/no-important';
+import styles from './AppStyles';
 
+import { getTracks } from './actions/tracks';
 import Something from './Something';
-import './App.css';
 
 class App extends Component {
 
@@ -33,8 +34,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div className={css(styles.container)}>
+        <div className={css(styles.square)}>
           <Something />
         </div>
         <div className="add-track">

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { css } from 'aphrodite/no-important';
 import styles from './AppStyles';
 
 import { getTracks } from './actions/tracks';
 import Something from './Something';
+import Menu from './Menu';
 
 class App extends Component {
 
@@ -36,6 +38,7 @@ class App extends Component {
     return (
       <div className={css(styles.container)}>
         <div className={css(styles.square)}>
+          <Menu />
           <Something />
         </div>
         <div className="add-track">
@@ -57,7 +60,7 @@ class App extends Component {
             this.props.tracks.map((track, index) => {
               return (
                 <li key={track.id}>
-                  {track.name}
+                  <Link to={`/tracks/${track.id}`}>{track.name}</Link>
                 </li>
               );
             })

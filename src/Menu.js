@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 
 class Menu extends Component {
   render() {
@@ -7,7 +7,7 @@ class Menu extends Component {
       <nav>
         <ul>
           <li>
-            <Link to={"/"}>Home</Link>
+            <IndexLink to={"/"}>Home</IndexLink>
           </li>
           <li>
             <Link to={"/about"}>About</Link>
